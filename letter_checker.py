@@ -8,7 +8,7 @@ def letter_checker(string):
 		if count > max:
 			most = string[i]
 			max = count
-	print (most,max)
+	return (most,max)
 
 print (letter_checker("twelve"))
 
@@ -18,12 +18,12 @@ def letter_checker2(string,letter):
 		if string[i] == letter:
 			count += 1
 
-	print (letter,count)
+	return (letter,count)
 
 print (letter_checker2("yellow","l"))
 
 def letter_checker3(string):
-	max = " "
+	maxchr = " "
 	maxcount = 0 
 	for i in range (len(string)):
 		count = 0 
@@ -33,8 +33,21 @@ def letter_checker3(string):
 
         	if count > maxcount:
         		maxcount = count 
-        		max = string[i]
+        		maxchr = string[i]
 
-	print (max,maxcount)
+	return (maxchr,maxcount)
 
 print (letter_checker3("iiiiff"))
+
+def letter_checker4(string):
+	maxcount = 0
+	maxchar = " "
+	for i in range (len(string)):
+		if string.count(string[i]) > maxcount:
+			maxcount = string.count(string[i]) 
+			maxchar = string[i]
+
+	return (maxchar,maxcount)
+
+
+print (letter_checker4("apple"))
